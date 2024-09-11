@@ -1,0 +1,10 @@
+.env
+/vendor/
+*.exe
+*.test
+*.out
+.vscode/
+*.log
+/bin/
+/build/
+/internal/

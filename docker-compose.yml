@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./views:/root/views
+      - ./public:/root/public
+      - ./redis-data:/data
+      - ./.env:/root/.env
+    depends_on:
+      - redis
+  redis:
+    image: redis:latest
+    volumes:
+      - ./redis-data:/data
+    ports:
+      - "6379:6379"
